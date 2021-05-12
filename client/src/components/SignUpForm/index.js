@@ -2,6 +2,7 @@ import React, { Fragment, useContext, useRef } from 'react';
 // import "./style.scss";
 import API from '../../utils/API';
 import UserContext from '../../utils/UserContext';
+import "./style.css";
 
 function SignUpForm(props) {
     const { email, setEmail, loggedIn, setLoggedIn } = useContext(UserContext);
