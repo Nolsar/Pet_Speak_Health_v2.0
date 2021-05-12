@@ -8,8 +8,8 @@ function Nav() {
   const [loginExpanded, setLoginExpanded] = useState(false);
   const {email, loggedIn} = useContext(UserContext);
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a className="navbar-brand" href="/">
+    <nav className="navbar navbar-expand-lg navbar-dark id='navbar'">
+      <a className="navbar-brand" id="navtitle" href="/">
         Pet Speak Health v-2.0
       </a>
       { (() => {
