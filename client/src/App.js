@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
-// import Detail from "./pages/Detail";
+import MedRecords from "./pages/MedicalRecords";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Login from "./pages/Login";
@@ -26,6 +26,9 @@ function App() {
             </Route>
             <Route exact path="/signup">
               <SignUp />
+            </Route>
+            <Route exact path="/medicalrecords">
+              <MedRecords />
             </Route>
             <Route exact path="/logout">
               <Logout />
