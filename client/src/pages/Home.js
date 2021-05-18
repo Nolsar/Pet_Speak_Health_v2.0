@@ -8,18 +8,15 @@
 // import { Input, TextArea, FormBtn } from "../components/Form";
 
 import React from "react";
-import { Col, Row, Container } from "../components/Grid";
+import "./home.css"
 
 
 function Home() {
-  return (
-    <Container fluid>
-      <Row>
-        <Col size="md-6">
-        </Col>
-      </Row>
-    </Container>
-  );
+    return (
+           <div>
+                <h1 className="mb-5" style={{ textAlign: "center", position: "relative" }}>PET•SPEAK•HEALTH</h1>
+            </div>
+    );
 }
 
 export default Home;
