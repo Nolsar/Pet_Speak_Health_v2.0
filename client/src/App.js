@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Books from "./pages/Books";
-import Detail from "./pages/Detail";
+import Home from "./pages/Home";
+import MedRecords from "./pages/MedicalRecords";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Login from "./pages/Login";
@@ -18,17 +18,17 @@ function App() {
         <div>
           <Nav />
           <Switch>
-            <Route exact path={["/", "/books"]}>
-              <Books />
-            </Route>
-            <Route exact path="/books/:bookid">
-              <Detail />
+            <Route exact path={["/", "/home"]}>
+              <Home />
             </Route>
             <Route exact path="/login">
               <Login />
             </Route>
             <Route exact path="/signup">
               <SignUp />
+            </Route>
+            <Route exact path="/medicalrecords">
+              <MedRecords />
             </Route>
             <Route exact path="/logout">
               <Logout />
