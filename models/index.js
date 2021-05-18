@@ -1,4 +1,6 @@
 module.exports = {
-  Book: require("./book"),
-  User: require("./user")
+  Client: require("./client"),
+  User: require("./user"),
+  Pet: require("./pet"),
+  MedicalRecords: require("./medical_record"),
 };
