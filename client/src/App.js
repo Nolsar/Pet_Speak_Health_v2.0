@@ -1,44 +1,32 @@
-import React, {useState} from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Books from "./pages/Books";
-import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
-import Login from "./pages/Login";
-import UserContext from "./utils/UserContext";
-import SignUp from "./pages/SignUp";
-import Logout from "./pages/Logout";
+import React, {useState, useEffect} from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Login from "./components/login";
+import Signup from "./components/signup";
+import Admin from "./components/admin";
+import Navbar from "./components/navbar";
+// import logo from './logo.svg';
+
 
 function App() {
-  const [email, setEmail] = useState("");
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() =>{
+    console.log("App user: " + user);
+  }, [user]);
+
+  const updateUser = (user) =>{
+    console.log(user);
+    setUser(user);
+  }
+
   return (
     <Router>
-      <UserContext.Provider value={{email, setEmail, loggedIn, setLoggedIn}}>
-        <div>
-          <Nav />
-          <Switch>
-            <Route exact path={["/", "/books"]}>
-              <Books />
-            </Route>
-            <Route exact path="/books/:bookid">
-              <Detail />
-            </Route>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/signup">
-              <SignUp />
-            </Route>
-            <Route exact path="/logout">
-              <Logout />
-            </Route>
-            <Route>
-              <NoMatch />
-            </Route>
-          </Switch>
-        </div>
-      </UserContext.Provider>
+      <Navbar/>
+    <div>
+      <Route exact path="/Login" render={() =>(<Login user={user} setUser={(u) => updateUser(u)}/>) } />
+      <Route exact path="/Signup" render={() =>(<Signup user={user} setUser={(u) => updateUser(u)}/>) } />
+      <Route exact path="/Admin" render={() =>(<Admin user={user} setUser={(u) => updateUser(u)}/>) } />
+    </div>
     </Router>
   );
 }

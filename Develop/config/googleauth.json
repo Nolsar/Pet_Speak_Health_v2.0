@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "pet-speak",
+  "private_key_id": "03e0d5370f36a6e30fbe29fbc030ac1207b47319",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQClm/ZxszCdomO0\nXRwkcJpzVt073wSmawuAZm+iuJG2HLKSzg/7Tv7GtRaF5PC/k/gcYbQkxAizc5ml\nYzYkaWD7A4CS9rO89eR3eEQehpU0FbH8iriz5Y+EeXz5WzVkyWfn2ndS8UrrNqt6\n2ohMFJA3YwO+ebkPsFzU/iZMWaU4q8N9GF4rK02vBoHBkwJaUThkZkcD71YM0vvj\nZFEM3G5qNbY8pPHPvuCRWVQaS/Z6PTi3RXr++P4ymntE7XuMEGoZz8nwen7Xd8zZ\n+7+JRmIc/xXEbXNjLg9mjwzhEaBQapFfd8SDjh1snQ7MkteWGtZ3BvF9yeHiW9Xg\nu2E+HUypAgMBAAECggEAO3/vaSZSHzCK1fBl/gme1DWvQqV7zDbFaRpknXfmkiF5\nXxk90LKvAsFpGC4K+Sm2iKvpxxPPdHniB/O/LhHWUBkQBr0wEoHd1baV8smzrYTl\n76//cFLX32auqgBFDLL36+sn19rtadi4f2kocv0oW13tqG+fN63LjJLLO78xh0xK\nl+K12JtWX0e30Q8LqDNrBmN7ndVv5lKfcgADHlhURlA4cm/kvqua6oamanydPg+M\ndw4aGY608hITsMLFNi/e6ibRyi/A6KGMmGrzj/8Y4NLTrqa1I6sxAgRvj3Lsc3V5\nXxZwoMvYMWKcuyXosF72W2P2AZzxe0QgRMdSBlF/CQKBgQDdPDj/OTCRx7JJYNUD\nd6YmqB/5n4VNao0O94bwJ5f+8ie/ulQrSDgSfx0RHFUr+Lh3w6RQkEQ4j4pU40/D\nfs4GeIeFwPySKQwk5umhAcVOe8pLG6H+20fjOkRem2FiS1nTysj9OY7C9ff1mtkp\nNb+WUTqiChywrWMsrXbtJOJGzwKBgQC/ogkJXZpJJnl6idoajYay6LcXhDGFsKmV\ndR9967tDaEM1FUMmhqcqYDz9osyWa4w/+jvYQ1an1pvL+sfRIn36tjQcE9DeWO/v\n8kr7Vgy2IOTlbsaWMADpQGPM6WYYEjjDchxaW0eDX6FbaMwwCWzP9osgW4eVcpQI\nGx0Qr5QTBwKBgG6bFi/basHnYeY3qCeUoRfAhEPrkdyTgbRS4j6cvOv0KxU61avR\n7l6o+GI+lQJn1enigPraNZFFijZIcu9dLSmlBrRDOMLmDLFCVNlvJjLHxupoBUSC\nYt1imx3ldvmKjH1La9LV/N7R1EcRRLLKsV84eyTaA1/9P5DtpICJKSuXAoGBALft\nl+rLUmhfaz03zoSpzd0uC32gvb9pXns63S0I8sWx7r+mVrtFhnDfyepPNToyo3xM\neuAJUcTp8MMJQnvyNSRLeRxx0Il4p2KQFXPClZTBYbDsb+J61IUL7j4gzoLQCndc\nsOXwsmTfhomrvj9k7HF2WvaFo07HmFlnXLBFNURFAoGBANmwWGSp6ipRPvVDoGkI\nsyAux+ZMkZMe4KefMb/dl2Cj5/LwCSmzosXU2lMVutYRbFnVIBMqNAlIKY7BCQyx\niQ7kmmv1W0/8GfWeoxoE4MVfKIlSKZi9bnS3RJsn2a+Rtb+IFrOlGtmBnGvAh1/o\nuavkyIH1dUocv8Ro3VDtAzVC\n-----END PRIVATE KEY-----\n",
+  "client_email": "transcribe@pet-speak.iam.gserviceaccount.com",
+  "client_id": "113270335206674551655",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/transcribe%40pet-speak.iam.gserviceaccount.com"
+}
