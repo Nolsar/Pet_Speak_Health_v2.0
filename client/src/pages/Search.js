@@ -1,51 +1,61 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
+// import React, { useState, useEffect } from "react";
+// import Jumbotron from "../components/Jumbotron";
+// import DeleteBtn from "../components/DeleteBtn";
+// import { Col, Row, Container } from "../components/Grid";
+// import { List, ListItem } from "../components/List";
+// import { Input, TextArea, FormBtn } from "../components/Form";
+// import Client from "../../../models/client";
 
+// function Clients() {
+//   // Initialize books as an empty array
+//     const [clients, setClients] = useState([]);
+  
+//     useEffect(() => {
+//       loadClients();
+//     }, []);
 
-// function Detail(props) {
-//   const [book, setBook] = useState({})
+//     function loadClients() {
+//       // Add code here to get all books from the database and store them using setBooks
+//     }
 
-//   // When this component mounts, grab the book with the _id of props.match.params.id
-//   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-//   const {bookid} = useParams() // think useContext
-//   useEffect(() => {
-//     API.getBook(bookid)
-//       .then(res => setBook(res.data))
-//       .catch(err => console.log(err));
-//   }, [bookid])
-
-//   return (
+//     return (
 //       <Container fluid>
 //         <Row>
-//           <Col size="md-12">
+//           <Col size="md-6">
 //             <Jumbotron>
-//               <h1>
-//                 {book.title} by {book.author}
-//               </h1>
+//               <h1>Search by client's last name</h1>
 //             </Jumbotron>
+//             <form>
+//               <Input name="first_name" placeholder="first name" />
+//               <Input name="last_name" placeholder="last name" />
+//               {/* <TextArea name="synopsis" placeholder="Synopsis (Optional)" /> */}
+//               <FormBtn>search</FormBtn>
+//             </form>
 //           </Col>
-//         </Row>
-//         <Row>
-//           <Col size="md-10 md-offset-1">
-//             <article>
-//               <h1>Synopsis</h1>
-//               <p>
-//                 {book.synopsis}
-//               </p>
-//             </article>
-//           </Col>
-//         </Row>
-//         <Row>
-//           <Col size="md-2">
-//             <Link to="/">← Back to Authors</Link>
+//           <Col size="md-6 sm-12">
+//             <Jumbotron>
+//               <h1>Client Information</h1>
+//             </Jumbotron>
+//             {Client.length ? (
+//               <List>
+//                 {Client.map(client => (
+//                   <ListItem key={client.last_name}>
+//                     <a href={"/client/" + book.last_name}>
+//                       <strong>
+//                         {book.title} by {book.author}
+//                       </strong>
+//                     </a>
+//                     <DeleteBtn />
+//                   </ListItem>
+//                 ))}
+//               </List>
+//             ) : (
+//               <h3>No Results to Display</h3>
+//             )}
 //           </Col>
 //         </Row>
 //       </Container>
 //     );
 //   }
 
-
-export default Detail;
+// export default Books;
