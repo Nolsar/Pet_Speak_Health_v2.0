@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, Component} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import MedRecords from "./pages/MedicalRecords";
@@ -8,6 +8,8 @@ import Login from "./pages/Login";
 import UserContext from "./utils/UserContext";
 import SignUp from "./pages/SignUp";
 import Logout from "./pages/Logout";
+import Search from "./pages/Search";
+
 
 function App() {
   const [email, setEmail] = useState("");
@@ -26,6 +28,9 @@ function App() {
             </Route>
             <Route exact path="/signup">
               <SignUp />
+            </Route>
+            <Route exact path="/search">
+              <Search />
             </Route>
             <Route exact path="/medicalrecords">
               <MedRecords />
