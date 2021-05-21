@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 // import './App.css';
 
 import recognizeMic from 'watson-speech/speech-to-text/recognize-microphone';
@@ -48,6 +49,7 @@ class STT extends Component {
         <div className="App">
           <button id="button" onClick={this.onClickButton.bind(this)}>Listen To Microphone</button>
         <div className="App-Text">{this.state.text}</div> 
+        <button id="stop">stop</button>
         </div>
       );
     }
