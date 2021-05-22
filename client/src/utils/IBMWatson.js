@@ -23,7 +23,8 @@ class STT extends Component {
           accessToken: token,
           objectMode: true, // send objects instead of text
           extractResults: true, // convert {results: [{alternatives:[...]}], result_index: 0} to {alternatives: [...], index: 0}
-          format: false // optional - performs basic formatting on the results such as capitals an periods
+          format: false, // optional - performs basic formatting on the results such as capitals an periods
+          outputElement:  "#output"
       }));
 
       /**
