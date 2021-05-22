@@ -4,8 +4,12 @@ import IBMW from '../utils/IBMWatson';
 function MedicalRecords() {
     return (
         <div className="container">
-            <p>Speech To Text</p>
+            <h1>Medical Records</h1>
+            <p></p>
+            <div>
+                <h2>Transcribe Medical Notes Here</h2>
             < IBMW />
+            </div>
         </div>
     )
 }
