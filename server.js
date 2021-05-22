@@ -21,6 +21,7 @@ app.use(express.static(__dirname + '/static'));
 app.use(cors());
 
 
+
 const speechToText = new SpeechToTextV1({
   authenticator: new IamAuthenticator
   ({ apikey: process.env.SPEECH_TO_TEXT_IAM_APIKEY}),

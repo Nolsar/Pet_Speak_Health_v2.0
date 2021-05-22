@@ -30,6 +30,7 @@
     "mongoose": "^5.3.16",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "vcap_services": "^0.7.1",
     "watson-developer-cloud": "^4.0.1",
     "watson-speech": "^0.39.0"
   }

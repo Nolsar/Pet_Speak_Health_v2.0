@@ -8269,6 +8269,11 @@ vcap_services@^0.6.0:
   dependencies:
     semantic-release "^13.1.1"
 
+vcap_services@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/vcap_services/-/vcap_services-0.7.1.tgz#d9f141dadc2f319d0028857741008832db915b66"
+  integrity sha512-Xo9lMYbQKYZCTKAAkfEoAEeP1aZZuO5VunT15XlB4mkwFrhlesT3A4R/FXBqOO8KLQ0j5scEQwJU6lLV/yIv/A==
+
 vcap_services@~0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/vcap_services/-/vcap_services-0.3.4.tgz#154bf940402512acca23df2263fc60ef66845ada"
