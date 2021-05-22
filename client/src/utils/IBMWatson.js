@@ -17,7 +17,7 @@ class STT extends Component {
         return response.text();
       }).then((token) => {
 
-        console.log(token)
+        // console.log(token)
         var stream = recognizeMic(Object.assign({
           url: "wss://api.us-east.speech-to-text.watson.cloud.ibm.com/instances/1cda85a8-e378-498d-967e-dc13234aef77/v1/recognize",
           accessToken: token,
@@ -51,10 +51,10 @@ class STT extends Component {
   render() {
     return (
       <div className="App">
-        <button id="button" onClick={this.onClickButton.bind(this)}>Listen To Microphone</button>
-        <button id="stop">stop</button>
-        <h5> Output: </h5>
-        <div className="App-Text">{this.state.text}</div>
+        <button id="button" onClick={this.onClickButton.bind(this)}>Begin Transcription</button>
+        <button id="stop">Stop Transcribing</button>
+        <h5> Medical Notes: </h5>
+        <p className="App-Text">{this.state.text}</p>
       </div>
     );
   }
