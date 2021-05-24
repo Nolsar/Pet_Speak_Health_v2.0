@@ -1,42 +1,70 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import firebase from "../utils/firebase";
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
-function navbar() {
+
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    title: {
+      flexGrow: 1,
+    },
+  }));
+
+function Navbar(props) {
+
+    const classes = useStyles();
+
+    const logoutButton = () =>{
+        firebase.logout();
+
+        // console.log(user);
+        props.setUser(null);
+    }
+
   return (
     <>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" id="flex">
-        <div class="container-fluid">
-            <button class="navbar-toggler" id="toggler1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+<div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton> */}
+          {props.user ? (<Typography variant="h6" className={classes.title}>
+          <Link className="navbar-brand" to="/admin">{props.user.first_name} {props.user.last_name}</Link>
+          </Typography>) :  null}
 
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                        <Link className="navbar-brand" to="/signup">Signup</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="navbar-brand" to="/login">Login</Link>
-                    </li>
-                    {/* <!-- <li className="nav-item">
-                        <a className="navbar-brand" to="#skills">Skills</a>
-                    </li> --> */}
-                    <li className="nav-item">
-                        <Link className="navbar-brand" to="/admin">Admin</Link>
-                    </li>
-                    {/* <li className="nav-item">
-                        <a className="navbar-brand" href="/contact">Contacts</a>
-                    </li> */}
-                    
-                </ul>
-            </div>
-        </div>
-    </nav>
+          {!props.user ? (<Button color="inherit">
+          <Link className="navbar-brand" to="/signup">Signup</Link>
+          </Button>) :  null}
+
+          {!props.user ? (<Button color="inherit">
+          <Link className="navbar-brand" to="/login">Login</Link>
+          </Button>) :  null}
+
+            {props.user ? (
+          <Button color="inherit" onClick={logoutButton}>
+          Logout
+          </Button>) :  null}
+        </Toolbar>
+      </AppBar>
+    </div>
   </>                  
 
   );
 }
 
-export default navbar;
+export default Navbar;

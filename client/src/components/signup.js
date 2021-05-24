@@ -3,6 +3,7 @@ import {Redirect} from "react-router-dom";
 import api from "../utils/api";
 
 import firebase from "../utils/firebase";
+import Button from '@material-ui/core/Button';
 
 function signup(props) {
   const submit = async (event) => {
@@ -83,9 +84,9 @@ function signup(props) {
               <span className="sr-only">Error:</span>{" "}
               <span className="msg"></span>
             </div>
-            <button type="submit" className="btn btn-default">
+            <Button type="submit" color="primary" variant="contained">
               Sign Up
-            </button>
+            </Button>
           </form>
           <br />
           <p>
