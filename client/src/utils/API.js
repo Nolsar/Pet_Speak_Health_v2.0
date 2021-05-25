@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 let api = {
     signup: (data) => {
         return axios.post("/api/signup", data).then((response) =>{
