@@ -1,37 +1,80 @@
 import axios from "axios";
 
-export default {
-  // Gets all clients
-  getClients: function() {
-    return axios.get("/api/client");
-  },
-  // Gets the client with the given id
-  getClient: function(id) {
-    return axios.get("/api/client/" + id);
-  },
-  // Deletes the client with the given id
-  deleteClient: function(id) {
-    return axios.delete("/api/client/" + id);
-  },
-  // Saves a client to the database
-  saveClient: function(clientData) {
-    return axios.post("/api/client", clientData);
-  },
+
+let api = {
+    signup: (data) => {
+        return axios.post("/api/signup", data).then((response) =>{
+            return response;
+        }).catch((error) =>{
+            return error;
+        })
+    },
+
+    login: (data) => {
+        return axios.post("/api/login", data).then((response) =>{
+            return response;
+        }).catch((error) =>{
+            return error;
+        })
+    },
+
+    newClient: (data) => {
+        return axios.post("/api/new_members", data).then((response) =>{
+            return response;
+        }).catch((error) =>{
+            return error;
+        })
+    },
+
+    fName: (data) => {
+        return axios.get("/api/search-firstname/client/"+data).then((response) =>{
+            return response;
+        }).catch((error) =>{
+            return error;
+        })
+    },
+
+    lName: (data) => {
+        return axios.get("/api/search-lastname/client/"+data).then((response) =>{
+            return response;
+        }).catch((error) =>{
+            return error;
+        })
+    },
+
+    addNewPet: (data) => {
+        return axios.post("/api/new_pet", data).then((response) =>{
+            return response;
+        }).catch((error) =>{
+            return error;
+        })
+    },
+
+    pList: (data) => {
+        return axios.get("/api/pet_data/"+data).then((response) =>{
+            return response;
+        }).catch((error) =>{
+            return error;
+        })
+    },
 
 
-  testUserRouter: function(){
-    return axios.get("/api/user/test");
-  },
-  login: function(userData){
-    return axios.post("/api/user/login", userData);
-  },
-  logout: function(){
-    return axios.get("/api/user/logout");
-  },
-  signup: function(userData){
-    return axios.post("/api/user/signup", userData);
-  },
-  getUser: function(){
-    return axios.get("/api/user/data");
-  }
-};
+    adRecord: (data) => {
+        return axios.post("/api/new_medical_record", data).then((response) =>{
+            return response;
+        }).catch((error) =>{
+            return error;
+        })
+    },
+
+
+    // pList: (data) => {
+    //     return axios.get("/api/pet_data/"+data).then((response) =>{
+    //         return response;
+    //     }).catch((error) =>{
+    //         return error;
+    //     })
+    // },
+}
+
+export default api;

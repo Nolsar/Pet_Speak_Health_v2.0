@@ -1,49 +1,57 @@
-import React, {useState, Component} from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
-import MedRecords from "./pages/MedicalRecords";
-import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
-import Login from "./pages/Login";
-import UserContext from "./utils/UserContext";
-import SignUp from "./pages/SignUp";
-import Logout from "./pages/Logout";
-import Search from "./pages/Search";
+
+import React, {useState, useEffect} from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Login from "./components/login";
+import Signup from "./components/signup";
+import Admin from "./components/admin";
+import Navbar from "./components/navbar";
+import Home from "./components/home";
+// import logo from './logo.svg';
+
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import firebase from "./utils/firebase";
+
 
 
 function App() {
-  const [email, setEmail] = useState("");
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() =>{
+    console.log("App user: " + user);
+    checkUserSession();
+  }, [user]);
+
+  const updateUser = (user) =>{
+    console.log(user);
+    setUser(user);
+  }
+
+const checkUserSession = async () =>{
+  // const u = await firebase.getUserData();
+  // if(u.status){
+  //   setUser(u.data)
+  // }
+}
+
   return (
     <Router>
-      <UserContext.Provider value={{email, setEmail, loggedIn, setLoggedIn}}>
-        <div>
-          <Nav />
-          <Switch>
-            <Route exact path={["/", "/home"]}>
-              <Home />
-            </Route>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/signup">
-              <SignUp />
-            </Route>
-            <Route exact path="/search">
-              <Search />
-            </Route>
-            <Route exact path="/medicalrecords">
-              <MedRecords />
-            </Route>
-            <Route exact path="/logout">
-              <Logout />
-            </Route>
-            <Route>
-              <NoMatch />
-            </Route>
-          </Switch>
-        </div>
-      </UserContext.Provider>
+      <Navbar user={user} setUser={(u) => updateUser(u)}/>
+    <div>
+    <Card >
+      <CardContent>
+      <Route exact path="/Login" render={() =>(<Login user={user} setUser={(u) => updateUser(u)}/>) } />
+      <Route exact path="/Signup" render={() =>(<Signup user={user} setUser={(u) => updateUser(u)}/>) } />
+      <Route exact path="/Admin" render={() =>(<Admin user={user} setUser={(u) => updateUser(u)}/>) } />
+      <Route exact path="/" render={() =>(<Home user={user} setUser={(u) => updateUser(u)}/>) } />
+      </CardContent>
+      {/* <CardActions>
+        <Button size="small">Learn More</Button>
+      </CardActions> */}
+    </Card>
+    </div>
+
     </Router>
   );
 }

@@ -1,12 +1,15 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const routes = require("./routes");
-const app = express();
-const PORT = process.env.PORT || 3001;
+
+require("dotenv").config();
+
+var path = require("path");
+// require("./Develop/dialogapi/STT.js"); need that back
+// Requiring necessary npm packages
+var express = require("express");
+var session = require("express-session");
+
 const cors = require('cors');
 
-const dotenv = require('dotenv');
-dotenv.config();
+
 
 fs = require('fs');
 const watson = require('ibm-watson/sdk');
@@ -17,8 +20,8 @@ const { IamAuthenticator } = require('ibm-watson/auth');
   // app.use('/api/');
 
 
-app.use(express.static(__dirname + '/static'));
-app.use(cors());
+
+
 
 
 
@@ -36,59 +39,68 @@ const speechToText = new SpeechToTextV1({
 //     console.log('error:', err);
 //   });
 
-  app.use('/api/speech-to-text/token', function(req, res) {
-    const authorization = new watson.AuthorizationV1({
-      authenticator: new IamAuthenticator({ apikey:  process.env.SPEECH_TO_TEXT_IAM_APIKEY }),
-      url: process.env.SPEECH_TO_TEXT_URL
-    });
-    authorization.getToken(
-      // {
-      //   url: IamAuthenticator.serviceUrl
-      // },
-      function(err, token) {
-        if (err) {
-          console.log('Error retrieving token: ', err);
-          res.status(500).send('Error retrieving token');
-          return;
-        }
-  
-        console.log('token from server.js is ', token);
-  
-  
-        res.send(token);
-      }
-    );
-  });
-  
   
 
+// Setting up port and requiring models for syncing
+var PORT = process.env.PORT || 8081;
+var db = require("./Develop/models");
 
-const session = require("express-session");
-// Requiring passport as we've configured it
-const passport = require("./config/passport");
-
-// Define middleware here
+// Creating express app and configuring middleware needed for authentication
+var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// We need to use sessions to keep track of our user's login status
-app.use(
-  session({ secret: "the secret that always changes", resave: true, saveUninitialized: true })
-);
-app.use(passport.initialize());
-app.use(passport.session());
-
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-// Add routes, both API and view
-app.use(routes);
 
-// Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/proj3");
 
-// Start the API server
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on "http://localhost:${PORT}"!`);
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, '/client/public')));
+// We need to use sessions to keep track of our user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+
+
+app.use(cors());
+
+// Requiring our routes
+
+require("./Develop/routes/api-routes")(app);
+
+
+app.use('/api/speech-to-text/token', function(req, res) {
+  const authorization = new watson.AuthorizationV1({
+    authenticator: new IamAuthenticator({ apikey:  process.env.SPEECH_TO_TEXT_IAM_APIKEY }),
+    url: process.env.SPEECH_TO_TEXT_URL
+  });
+  authorization.getToken(
+    // {
+    //   url: IamAuthenticator.serviceUrl
+    // },
+    function(err, token) {
+      if (err) {
+        console.log('Error retrieving token: ', err);
+        res.status(500).send('Error retrieving token');
+        return;
+      }
+
+      console.log('token from server.js is ', token);
+
+
+      res.send(token);
+    }
+  );
 });
+
+
+
+
+
+
+// Syncing our database and logging a message to the user upon success
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+  });
+});
+
