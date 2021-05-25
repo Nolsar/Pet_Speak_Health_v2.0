@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, Component} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import MedRecords from "./pages/MedicalRecords";
