@@ -5,6 +5,7 @@ import Login from "./components/login";
 import Signup from "./components/signup";
 import Admin from "./components/admin";
 import Navbar from "./components/navbar";
+import Home from "./components/home";
 // import logo from './logo.svg';
 
 import Card from '@material-ui/core/Card';
@@ -43,6 +44,7 @@ const checkUserSession = async () =>{
       <Route exact path="/Login" render={() =>(<Login user={user} setUser={(u) => updateUser(u)}/>) } />
       <Route exact path="/Signup" render={() =>(<Signup user={user} setUser={(u) => updateUser(u)}/>) } />
       <Route exact path="/Admin" render={() =>(<Admin user={user} setUser={(u) => updateUser(u)}/>) } />
+      <Route exact path="/" render={() =>(<Home user={user} setUser={(u) => updateUser(u)}/>) } />
       </CardContent>
       {/* <CardActions>
         <Button size="small">Learn More</Button>

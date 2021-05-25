@@ -223,6 +223,7 @@ function ClientListe() {
                                                     onClick={() => {
                                                         setViewingPet(true);
                                                         getPetList(list.id);
+                                                        setSelectedClient(list);
                                                     }}
                                                 >
                                                     View Pets <VisibilityIcon style={{ color: "white", marginLeft: "7px" }} />

@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
+import MicIcon from '@material-ui/icons/Mic';
+import MicOffIcon from '@material-ui/icons/MicOff';
 
 // import './App.css';
 
 import recognizeMic from 'watson-speech/speech-to-text/recognize-microphone';
 
 class STT extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {};
   }
 
   onClickButton() {
 
-    fetch('http://localhost:3001/api/speech-to-text/token')
+    fetch('/api/speech-to-text/token')
       .then((response) => {
         return response.text();
       }).then((token) => {
@@ -34,9 +36,11 @@ class STT extends Component {
         stream.on('data', (data) => {
           // console.log('this is my data');
           console.log(data);
-          this.setState({
-            text: data.alternatives[0].transcript
-          })
+          // this.setState({
+          //   text: data.alternatives[0].transcript
+          // })
+
+          this.props.setText(data.alternatives[0].transcript)
 
           console.log(data.alternatives[0].transcript)
         });
@@ -51,10 +55,12 @@ class STT extends Component {
   render() {
     return (
       <div className="App">
-        <button id="button" onClick={this.onClickButton.bind(this)}>Begin Transcription</button>
-        <button id="stop">Stop Transcribing</button>
-        <h5> Medical Notes: </h5>
-        <p className="App-Text">{this.state.text}</p>
+        {/* <button id="button" onClick={this.onClickButton.bind(this)}>Begin Transcription</button> */}
+        <MicIcon style={{margin:"0px 5px", cursor: "pointer", color: "blue"}} onClick={this.onClickButton.bind(this)}/>
+        {/* <button id="stop">Stop Transcribing</button> */}
+        <MicOffIcon style={{margin:"0px 5px", cursor: "pointer", color: "red"}} id="stop"/>
+        {/* <h5> Medical Notes: </h5> */}
+        {/* <p className="App-Text">{this.state.text}</p> */}
       </div>
     );
   }

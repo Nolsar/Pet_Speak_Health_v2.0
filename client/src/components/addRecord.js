@@ -5,9 +5,21 @@ import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import Button from "@material-ui/core/Button";
 import api from "../utils/api";
+import InputAdornment from '@material-ui/core/InputAdornment';
+
+import IBMWatson from "../utils/IBMWatson";
 
 function AddRecord(props) {
     const [message, setMessage] = useState(null);
+
+    const [medSpeech, setMedSpeech] = useState(null);
+
+    const [physicalSpeech, setPhysicalSpeech] = useState(null);
+
+    const [eduSpeech, setEduSpeech] = useState(null);
+
+
+    const [selectedInput, setSelectedInput] = useState(null);
 
     const newRecord = (event) => {
         event.preventDefault();
@@ -32,12 +44,25 @@ function AddRecord(props) {
         <form className="new-record" onSubmit={newRecord}>
             <hr />
             <h4>Add New record</h4>
+            
             <TextField
+            value={medSpeech}
+            onFocus={() =>{setSelectedInput("med")}}
+            // onBlur={() =>{setSelectedInput(null)}}
+            InputProps={{
+                endAdornment:<InputAdornment position="end">{selectedInput == "med" ? <IBMWatson text={medSpeech} setText={(t) =>{setMedSpeech(t)}}/> : null }</InputAdornment>
+              }}
                 style={{ width: "100%", marginBottom:"15px" }}
                 variant="filled" type="text" className="form-control" id="medication_list" placeholder="medication list" />
 
             {/* <!--last name--> */}
             <TextField
+            value={physicalSpeech}
+            onFocus={() =>{setSelectedInput("physic")}}
+            // onBlur={() =>{setSelectedInput(null)}}
+            InputProps={{
+                endAdornment:<InputAdornment position="end">{selectedInput == "physic" ? <IBMWatson text={physicalSpeech} setText={(t) =>{setPhysicalSpeech(t)}}/> : null }</InputAdornment>
+              }}
                 style={{ width: "100%", marginBottom:"15px" }}
                 variant="filled" type="text" className="form-control" id="physical_exam" placeholder="physical exam" />
 
@@ -58,6 +83,12 @@ function AddRecord(props) {
                 <MenuItem value="Influenza">Influenza</MenuItem>
             </Select>
             <TextField
+            value={eduSpeech}
+            onFocus={() =>{setSelectedInput("edu")}}
+            // onBlur={() =>{setSelectedInput(null)}}
+            InputProps={{
+                endAdornment:<InputAdornment position="end">{selectedInput == "edu" ? <IBMWatson text={eduSpeech} setText={(t) =>{setEduSpeech(t)}}/> : null }</InputAdornment>
+              }}
                 style={{ width: "100%", marginBottom:"15px" }}
                 variant="filled" type="text" className="form-control" id="client_education" placeholder="client education" />
 
