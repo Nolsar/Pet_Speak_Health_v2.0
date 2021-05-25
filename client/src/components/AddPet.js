@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from "react";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 import api from "../utils/api";
 
 function AddPet(props) {
@@ -22,6 +24,7 @@ function AddPet(props) {
             client_id: props.client.id
           }).then((response) =>{
             setMessage(response.data.message);
+            props.getPetList();
           })
 
     }
@@ -32,32 +35,46 @@ function AddPet(props) {
       <form className="new-pet" onSubmit={newPet}>
         <hr />
         <h4>Add New Pet</h4>
-        <div className="form-group col-md-5 col-sm-12">
-          <label >Pet Name</label>
-          <input type="text" className="form-control" id="pet-name" placeholder="name" name="name"/>
-        </div>
+        
+          
+          <TextField
+                style={{ width: "100%", marginBottom:"15px" }}
+                variant="filled" type="text" className="form-control" id="pet-name" placeholder="name" name="name"/>
+        
          {/* <!--last name--> */}
-         <div className="form-group col-md-5 col-sm-12">
-          <label >Animal Type</label>
-          <input type="text" className="form-control" id="animal_type" placeholder="Type" name="animal_type"/>
-        </div>
+         
+          
+          <TextField
+                style={{ width: "100%", marginBottom:"15px" }}
+                variant="filled" type="text" className="form-control" id="animal_type" placeholder="Type" name="animal_type"/>
+        
         {/* <!--address--> */}
-        <div className="form-group col-md-5 col-sm-12">
-          <label >Breed</label>
-          <input type="text" className="form-control" id="breed" placeholder="Breed" name="breed"/>
-        </div>
+        
+          <TextField
+                style={{ width: "100%", marginBottom:"15px" }}
+                variant="filled" type="text" className="form-control" id="breed" placeholder="Breed" name="breed"/>
+        
         {/* <!--city--> */}
-        <div className="form-group col-md-5 col-sm-12">
-          <label >Birthdate</label>
-          <input type="text" className="form-control" id="birthdate" placeholder="Birthdate" name="birthdate"/>
-        </div>
+       
+          
+          <TextField
+                style={{ width: "100%", marginBottom:"15px" }}
+                variant="filled" type="text" className="form-control" id="birthdate" placeholder="Birthdate" name="birthdate"/>
+       
         {/* <!--state--> */}
-        <div className="form-group col-md-5 col-sm-12">
-          <label >Color</label>
-          <input type="text" className="form-control" id="color" placeholder="Color" name="color"/>
-        </div>
+        
+          
+          <TextField
+                style={{ width: "100%", marginBottom:"15px" }}
+                variant="filled" type="text" className="form-control" id="color" placeholder="Color" name="color"/>
+        
         <span>{message}</span>
-        <button type="submit" style={{display: "block", width: "80%"}} className="btn btn-default btn-primary">Create Pet</button>
+        <div style={{ width: "100%", textAlign: "center", justifyContent: "center"}}><Button
+                    type="submit"
+                    color="primary" variant="contained"
+                >
+                    Create Pet
+                </Button></div>
       </form>
     </div>
   );

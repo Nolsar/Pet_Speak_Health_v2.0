@@ -61,6 +61,27 @@ class Firebase {
             });
     }
 
+    // function that checks if the user still in 
+    getUserData() {
+        console.log("yiitakaa", this.auth.currentUser);
+        if (this.auth.currentUser) {
+            return this.auth.currentUser.getIdToken(true).then((idT) => {
+                var data = this.auth.currentUser.uid
+                console.log("goulse", data);
+                return api.login(data).then((response) => {
+                     return {status: true, data: response};
+                 }).catch((error) => {
+                     return error;
+                 })    
+            }).catch((error) => {
+                return { status: false, error: error, idToken: false }
+            });
+        } else {
+            return { status: false, error: "no active user", idToken: false }
+        }
+    }
+
+
     signInWithEmailAndPassword(credential) {
         return this.auth.signInWithEmailAndPassword(credential.email, credential.password)
             .then((user) => {

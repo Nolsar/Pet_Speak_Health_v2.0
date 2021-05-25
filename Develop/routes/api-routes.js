@@ -209,11 +209,11 @@ app.post("/api/new_medical_record", function(req, res) {
       return;
     }
     else{
-      var petId = req.params.id;
+      var clientId = req.params.id;
       console.log(req.params);
       db.Pets.findAll({
         where: {
-          client_id: petId
+          client_id: clientId
         },
       }).then(async function(dbpet) {
         if(dbpet){

@@ -47,7 +47,33 @@ let api = {
         }).catch((error) =>{
             return error;
         })
-    }
+    },
+
+    pList: (data) => {
+        return axios.get("/api/pet_data/"+data).then((response) =>{
+            return response;
+        }).catch((error) =>{
+            return error;
+        })
+    },
+
+
+    adRecord: (data) => {
+        return axios.post("/api/new_medical_record", data).then((response) =>{
+            return response;
+        }).catch((error) =>{
+            return error;
+        })
+    },
+
+
+    // pList: (data) => {
+    //     return axios.get("/api/pet_data/"+data).then((response) =>{
+    //         return response;
+    //     }).catch((error) =>{
+    //         return error;
+    //     })
+    // },
 }
 
 export default api;

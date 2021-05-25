@@ -9,7 +9,7 @@ import Navbar from "./components/navbar";
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+import firebase from "./utils/firebase";
 
 
 function App() {
@@ -17,12 +17,20 @@ function App() {
 
   useEffect(() =>{
     console.log("App user: " + user);
+    checkUserSession();
   }, [user]);
 
   const updateUser = (user) =>{
     console.log(user);
     setUser(user);
   }
+
+const checkUserSession = async () =>{
+  // const u = await firebase.getUserData();
+  // if(u.status){
+  //   setUser(u.data)
+  // }
+}
 
   return (
     <Router>
