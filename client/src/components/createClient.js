@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import api from "../utils/api";
+import api from "../utils/api2";
 
 function CreateClient(props) {
     const [message, setMessage] = useState(null);

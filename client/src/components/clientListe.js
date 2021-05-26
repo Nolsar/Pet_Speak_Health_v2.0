@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import api from "../utils/api";
+import api from "../utils/api2";
 import AddPet from "./AddPet";
 import Button from "@material-ui/core/Button";
 

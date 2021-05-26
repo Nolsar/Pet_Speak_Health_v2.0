@@ -4,7 +4,7 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import Button from "@material-ui/core/Button";
-import api from "../utils/api";
+import api from "../utils/api2";
 import InputAdornment from '@material-ui/core/InputAdornment';
 
 import IBMWatson from "../utils/IBMWatson";
