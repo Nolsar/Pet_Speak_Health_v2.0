@@ -1,6 +1,5 @@
-import firebase from 'firebase';
 import app from 'firebase/app';
-import api from "./api";
+import api from "./api2";
 import 'firebase/auth';
 
 
