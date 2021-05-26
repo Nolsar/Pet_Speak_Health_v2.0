@@ -41,9 +41,9 @@ const checkUserSession = async () =>{
     <div>
     <Card >
       <CardContent>
-      <Route exact path="/Login" render={() =>(<Login user={user} setUser={(u) => updateUser(u)}/>) } />
-      <Route exact path="/Signup" render={() =>(<Signup user={user} setUser={(u) => updateUser(u)}/>) } />
-      <Route exact path="/Admin" render={() =>(<Admin user={user} setUser={(u) => updateUser(u)}/>) } />
+      <Route exact path="/login" render={() =>(<Login user={user} setUser={(u) => updateUser(u)}/>) } />
+      <Route exact path="/signup" render={() =>(<Signup user={user} setUser={(u) => updateUser(u)}/>) } />
+      <Route exact path="/admin" render={() =>(<Admin user={user} setUser={(u) => updateUser(u)}/>) } />
       <Route exact path="/" render={() =>(<Home user={user} setUser={(u) => updateUser(u)}/>) } />
       </CardContent>
       {/* <CardActions>

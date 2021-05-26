@@ -24,7 +24,7 @@ function login(props) {
 
   return (
     <div className="container">
-        {props.user && <Redirect to="/Admin"/>}
+        {props.user && <Redirect to="/admin"/>}
     <div className="row">
       <div className="col-md-6 col-md-offset-3">
         <h2>Login Form</h2>
