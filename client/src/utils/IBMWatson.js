@@ -48,6 +48,9 @@ class STT extends Component {
           console.log(err);
         });
         document.querySelector('#stop').onclick = stream.stop.bind(stream);
+        setTimeout(function(stream){
+          stream.stop()
+        }, 10000, stream);
       }).catch(function (error) {
         console.log(error);
       });
