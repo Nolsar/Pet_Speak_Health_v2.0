@@ -147,7 +147,7 @@ Deployed Project : [Pet Speak Health v.2](https://pet-speak-health-v2.herokuapp.
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements/Contributors
-* [Sara N.] (https://github.com/Nolsar)
+* [Sara N.](https://github.com/Nolsar)
 * [Salfo B.](https://github.com/Sbande90)
 
 
