@@ -54,7 +54,7 @@ PSH enables not just keeping of medical documentation, but the oral dictation, a
 Pet Speak Health (PSH) enables the storage of medical notes, history, and other relevant medical records specific to a pet and their owner. Pet Speak Health uses STT (Speech to Text) notation for when your hands are occupied caring for a per. Medical record transcription takes the pen out of your hands so you can focus on what is really important... caring for the animals! When activated, PSH records audio and will transcribe
 your notes and store them to a pet's unique file the server. The pet's records are unique to each client ie: owner. Medical records are accessible to the staff, as well as the owner.
 
-![Screenshot](https://github.com/Nolsar/Pet_Speak_Health/blob/main/Develop/public/img/Screenshot.jpg)
+<!-- ![Screenshot](https://github.com/Nolsar/Pet_Speak_Health/blob/main/Develop/public/img/Screenshot.jpg) -->
 
 
 
