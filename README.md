@@ -139,9 +139,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Sara N. - [@github](https://github.com/Nolsar)
 
-Project Link: [Pet Speak Health](https://github.com/Nolsar/Pet_Speak_Health_v2.0)
+Project Link: [Pet Speak Health v.2](https://github.com/Nolsar/Pet_Speak_Health_v2.0)
 
-Deployed Project : [Pet Speak Health](https://pet-speak-health-v2.herokuapp.com/)
+Deployed Project : [Pet Speak Health v.2](https://pet-speak-health-v2.herokuapp.com/)
 
 
 

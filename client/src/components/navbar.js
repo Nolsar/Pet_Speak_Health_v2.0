@@ -59,6 +59,7 @@ function Navbar(props) {
           <Button color="inherit" onClick={logoutButton}>
           Logout
           </Button>) :  null}
+        
         </Toolbar>
       </AppBar>
     </div>
