@@ -27,7 +27,7 @@ function Home() {
               <i className="icon-layers m-auto text-primary"></i>
             </div>
             <h3>Communication</h3>
-            <p className="lead mb-0"> Using the systems built in microphone, Speech-to-Text is an easy way for medcial staff to dictate their medical finding into the pet's chart.</p>
+            <p className="lead mb-0"> Using the system's built in microphone, Speech-to-Text is an easy way for medical staff to dictate their medical findings into the pet's chart.</p>
           </div>
         </div>
         <div className="col-lg-4">
@@ -36,7 +36,7 @@ function Home() {
               <i className="icon-check m-auto text-primary"></i>
             </div>
             <h3>Problem-solving</h3>
-            <p className="lead mb-0">Save more time while writing medical notes. Spend the extra time diagnosing and researching treatments for pets.</p>
+            <p className="lead mb-0">Save more time while writing medical notes. Spend that saved time diagnosing and researching treatments for patients.</p>
           </div>
         </div>
       </div>
